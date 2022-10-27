@@ -11,6 +11,11 @@ class MyBase(object):
         cmake.configure()
         cmake.build()
 
+    def generate(self):
+        tc = CMakeToolchain(self)
+        tc.preprocessor_definitions["EXAMPLE_DEFINE"] = 1
+        tc.generate()
+
     def package(self):
         self.output.info("My cool package!")
     def package_info(self):
