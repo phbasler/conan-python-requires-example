@@ -26,8 +26,8 @@ class MyBase(object):
 
 class PyReq(ConanFile):
     name = "pyreq"
-    version = "0.1.3"
-
-    def init(self):
+    def set_version(self):
+        self.version = "0.1.3"
         f = open("./test_package/version.txt","w")
         f.write(self.version)
+        
